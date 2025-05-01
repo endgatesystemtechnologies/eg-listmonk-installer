@@ -1,25 +1,19 @@
 #!/bin/bash
 set -e
 
-echo "📥 Downloading Listmonk binary..."
+echo "📥 Downloading Listmonk binary"
 
-mkdir -p /opt/listmonk
-cd /opt/listmonk
+cd /opt
+curl -LO https://github.com/knadh/listmonk/releases/download/v2.5.0/listmonk_2.5.0_linux_amd64.tar.gz
+tar -xzf listmonk_2.5.0_linux_amd64.tar.gz
+rm listmonk_2.5.0_linux_amd64.tar.gz
 
-# Download v5.0.0 Linux binary
-curl -LO https://github.com/knadh/listmonk/releases/download/v5.0.0/listmonk_5.0.0_linux_amd64.tar.gz
+echo "⚙️ Injecting config.toml"
 
-echo "📦 Extracting Listmonk..."
-tar -xvzf listmonk_5.0.0_linux_amd64.tar.gz
-rm listmonk_5.0.0_linux_amd64.tar.gz
+curl -fsSL https://raw.githubusercontent.com/endgatesystemtechnologies/eg-listmonk-installer/main/config/config.toml.template -o /opt/listmonk/config.toml
 
-echo "⚙️ Injecting config.toml..."
-curl -fsSL https://raw.githubusercontent.com/endgatesystemtechnologies/eg-listmonk-installer/main/config/config.toml.template -o config.toml
+echo "🧱 Running DB migrations"
+/opt/listmonk/listmonk --install --config /opt/listmonk/config.toml
 
-echo "🛠️ Running Listmonk DB installer..."
-./listmonk --config config.toml --install --idempotent
-
-echo "🚀 Starting Listmonk..."
-nohup ./listmonk --config config.toml > listmonk.log 2>&1 &
-
-echo "✅ Listmonk running on http://localhost:9000"
+echo "🚀 Launching Listmonk"
+/opt/listmonk/listmonk --config /opt/listmonk/config.toml &
