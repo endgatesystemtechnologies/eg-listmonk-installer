@@ -1,10 +1,15 @@
 #!/bin/bash
 set -e
 
-echo "📄 Configuring PostgreSQL user and DB..."
+echo "📦 Installing PostgreSQL..."
+
+apt update
+apt install -y postgresql postgresql-contrib
+
+echo "📄 Configuring DB user and schema"
 
 sudo -u postgres psql <<EOF
-CREATE USER listmonk WITH PASSWORD 'listmonkpass';
+CREATE USER listmonk WITH PASSWORD 'listmonk';
 CREATE DATABASE listmonk OWNER listmonk;
 EOF
 
