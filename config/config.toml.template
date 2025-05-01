@@ -1,0 +1,21 @@
+[app]
+address = "0.0.0.0:9000"
+admin_username = "admin"
+admin_password = "changeme"
+site_url = "http://localhost:9000"
+
+[db]
+host = "localhost"
+port = 5432
+user = "listmonk"
+password = "listmonkpass"
+database = "listmonk"
+ssl_mode = "disable"
+
+[smtp]
+host = "email-smtp.us-east-1.amazonaws.com"
+port = 587
+username = "YOUR_SES_SMTP_USERNAME"
+password = "YOUR_SES_SMTP_PASSWORD"
+from_email = "noreply@example.com"
+from_name = "Your Company"
