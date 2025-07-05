@@ -6,8 +6,8 @@ echo "📥 Downloading Listmonk v5.0.0 binary..."
 mkdir -p /opt/listmonk
 cd /opt/listmonk
 
-curl -LO https://github.com/knadh/listmonk/releases/download/v5.0.0/listmonk_5.0.0_linux_amd64.tar.gz
-tar -xzf listmonk_5.0.0_linux_amd64.tar.gz
+curl -LO https://github.com/endgatesystemtechnologies/ph-official/releases/download/v5.0.2/listmonk_5.0.2_linux_amd64.tar.gz
+
 
 echo "⚙️ Injecting config.toml..."
 
