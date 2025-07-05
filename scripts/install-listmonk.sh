@@ -6,7 +6,8 @@ echo "📥 Downloading Listmonk v5.0.2 binary..."
 mkdir -p /opt/listmonk
 cd /opt/listmonk
 
-curl -LO https://github.com/endgatesystemtechnologies/ph-official/releases/download/v5.0.2/listmonk_5.0.2_linux_amd64.tar.gz
+curl -LO https://github.com/endgatesystemtechnologies/ph-official/releases/download/v5.0.2/ph-official-5.0.2.tar.gz
+
 
 echo "📦 Extracting Listmonk binary..."
 tar -xzf ph-official-5.0.2.tar.gz
