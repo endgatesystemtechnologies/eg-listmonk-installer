@@ -11,7 +11,7 @@ curl -LO https://github.com/endgatesystemtechnologies/ph-official/releases/downl
 
 echo "⚙️ Injecting config.toml..."
 
-curl -fsSL https://raw.githubusercontent.com/endgatesystemtechnologies/eg-listmonk-installer/main/config/config.toml.template -o config.toml
+curl -fsSL https://raw.githubusercontent.com/endgatesystemtechnologies/ph-official/main/config/config.toml.template -o config.toml
 
 echo "🧱 Running DB migrations..."
 
