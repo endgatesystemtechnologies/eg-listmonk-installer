@@ -9,7 +9,8 @@ cd /opt/listmonk
 curl -LO https://github.com/endgatesystemtechnologies/ph-official/releases/download/v5.0.2/listmonk_5.0.2_linux_amd64.tar.gz
 
 echo "📦 Extracting Listmonk binary..."
-tar -xzf listmonk_5.0.2_linux_amd64.tar.gz
+tar -xzf ph-official-5.0.2.tar.gz
+
 
 echo "⚙️ Injecting config.toml..."
 
